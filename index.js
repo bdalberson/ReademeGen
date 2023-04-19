@@ -41,7 +41,7 @@ inquirer
   ])
   .then((data) => {
     console.log(data);
-    const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+    const filename = `${"README_" + data.name.toLowerCase().split(' ').join('')}.md`;
     //Farley Wittles 
     //farleywittles.json
     fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
