@@ -26,10 +26,12 @@ inquirer
       }
     },
     {
-      type: 'checkbox',
+      type: 'input',
       message: 'What languages do you know?',
       name: 'stack',
-      choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
+      validate: function (input) { 
+        return input.length > 3
+    }
     },
     {
       type: 'input',
@@ -74,13 +76,21 @@ inquirer
   ])
   .then((data) => {
     console.log(data);
-    const filename = `${"README_" + data.name.toLowerCase().split(' ').join('')}.md`;
+    const filename = `README_${data.name.toLowerCase().split(' ').join('')}.md`;
     
-    fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-      err ? console.log(err) : console.log('Success!')
-    );
-  });
-
+    fs.writeFile(filename, JSON.stringify({
+      name: data.name,
+      stack: data.stack,
+      title: data.title,
+      install: data.install,
+      usage: data.usage,
+      contrib: data.contrib,
+      tests: data.tests
+    }), (err) => {
+        if (err) throw err;
+        console.log('The file has been saved!');
+      });
+    });
 
 
 
