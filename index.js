@@ -74,61 +74,34 @@ inquirer
         }
       },
   ])
-  .then((data) => {
-    console.log(data);
-    const {name,stack,title,install,usage,contrib,tests} = data;
-    const filename = `README_${data.name.toLowerCase().split(' ').join('')}.md`;
+    .then((data) => {
+        console.log(data);
+        const { name, stack, title, install, usage, contrib, tests } = data;
+        const filename = `README_${data.name.toLowerCase().split(' ').join('')}.md`;
     
-    fs.writeFile(filename.md, "
-    | Technology Used         | Resource URL 
-    
+        fs.writeFile(filename, `
+    | Technology Used         | Resource URL |
+    |-------------------------|-----------------------|
     ## Description 
-    
-  
-    ```
-    
-    
-    ```
-    
-    
-            
-    ```
-    
-    
+    \`\`\`  
+    \`\`\`
     ## Usage 
-    
-    Enter a city you want to go to and click the search button to begin.  If its an actual city it will return 5 dady forcast for selected city and the search will be saved as a button for future use. 
-    
+    Enter a city you want to go to and click the search button to begin. If it's an actual city, it will return 5-day forecast for the selected city and the search will be saved as a button for future use.
     ## Learning Points 
-    
-    
-    Api week so most of learning was in how to handle api calls and work with the data. The code should use a loop to go through some unneccesary bits of code and that will  be my main point of focus for the next project. 
-    
-    
     ## Author Info
-    
-    QA professional turning into coder 
-    
-    * [Portfolio](https://bdalberson.github.io/Course2Biopage/)
-    * [LinkedIn](https://www.linkedin.com/in/brian-alberson-464b2271/)
-    * [Github](https://github.com/bdalberson)
-    ```
-    ""
-    
+    * [Portfolio](https://bdalberson.github.io/)
+    * [LinkedIn](https://www.linkedin.com/in/)
+    * [Github](https://github.com/)
+    \`\`\`
     ## Credits
-    
-    Gotta thanks the wife and family for giving me time and space to complete this it was quite an amount of work.     
-    
     ---
-    ## Tests
-    '
-      });
-    }), (err) => {
+    ## Tests`, (err) => {
+            if (err) throw err;
+            console.log('The file has been saved!');
+        });
+    }, (err) => {
         if (err) throw err;
-        console.log('The file has been saved!');
-      });
+        console.log('The file could not be saved!');
     });
-
-
 
 
