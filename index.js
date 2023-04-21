@@ -1,20 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer')
 
-
-// title = process.argv[2]
-// desc = process.argv[3]
-// install = process.argv[4]
-// Usage = process.argv[6]
-// contrib = process.argv[7]
-// tests = process.argv[8]
-// questions = process.argv[9]
-// license = process.argv[10]
-// username = process.argv[11]
-// email = process.argv[12]
-
-
-
 inquirer
   .prompt([
     {
@@ -99,6 +85,7 @@ inquirer
 
     ## Tests
     ${tests}
+    ![](https://img.shields.io/badge/%3CLicense%3E-%3CMIT%3E-%3CBLUE%3E)
     `, (err) => {
             if (err) throw err;
             console.log('The file has been saved!');
