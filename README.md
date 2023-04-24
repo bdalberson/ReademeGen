@@ -64,5 +64,8 @@ Gotta thanks the wife and family for giving me time and space to complete this i
 
 ---
 
+    ![MIT](https://img.shields.io/badge/%3CLicense%3E-%3CMIT%3E-%3CBLUE%3E)
+
+
 ## Tests
 Tested and works on mobile. test buttons and layout on varrying screens and sizes.  
