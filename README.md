@@ -64,7 +64,8 @@ Gotta thanks the wife and family for giving me time and space to complete this i
 
 ---
 
-    ![MIT](https://img.shields.io/badge/%3CLicense%3E-%3CMIT%3E-%3CBLUE%3E)
+   [![Licence](https://img.shields.io/badge/%3CLicense%3E-%3CMIT%3E-%3CBLUE%3E)](./LICENSE)
+
 
 
 ## Tests

@@ -83,8 +83,8 @@ inquirer
     ${data.contrib}
     ## Tests
     ${data.tests}
-    ## Questions
-    ![MIT](https://img.shields.io/badge/%3CLicense%3E-%3CMIT%3E-%3CBLUE%3E)
+    ## Licence
+    [![Licence](https://img.shields.io/badge/%3CLicense%3E-%3CMIT%3E-%3CBLUE%3E)](./LICENSE)
     `
     fs.writeFile(filename, content, (err) => {
         if (err) throw err;
