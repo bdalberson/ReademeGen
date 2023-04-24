@@ -63,36 +63,35 @@ inquirer
     .then((data) => {
         console.log(data);
         const { name, stack, title, install, usage, contrib, tests } = data;
-        const filename = `README_${data.name.toLowerCase().split(' ').join('')}.md`;
-    
-        fs.writeFile(filename, `
-    ${name}
-    ${title}
-    | Technology Used         | 
-    ${stack}
-    ## Description 
-    \`\`\`  
-    \`\`\`
-    ## Usage 
-    Enter a city you want to go to and click the search button to begin. If it's an actual city, it will return 5-day forecast for the selected city and the search will be saved as a button for future use.
-    ## Learning Points
-    ## Usage 
-    \`\`\`     ${usage}
-    ## install
-    ${install}
-    ## Contrabutions 
-    ${contrib}
-
-    ## Tests
-    ${tests}
-    ![](https://img.shields.io/badge/%3CLicense%3E-%3CMIT%3E-%3CBLUE%3E)
-    `, (err) => {
+        const filename = `${data.title.trim().toLowerCase().split(' ').join('-')}-README.md`;
+        const content = 
+`# ${data.title}
+## Table of Contents
+- [Languages](#languages)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+## Languages
+${data.stack}
+## Installation
+${data.install}
+## Usage
+${data.usage}
+## Contributing
+${data.contrib}
+## Tests
+${data.tests}
+## Questions
+[My GitHub Profile](https://github.com/${data.github})
+[Email me!](mailto:${data.email})`;
+        writeToFile(fileName, content);
+    })
+, (err) => {
             if (err) throw err;
             console.log('The file has been saved!');
-        });
-    }, (err) => {
-        if (err) throw err;
-        console.log('The file could not be saved!');
-    });
+        };
+
 
 

@@ -7,11 +7,6 @@
 | Node.JS| [https://developer.mozilla.org/en-US/docs/Glossary/Node.js?utm_source=wordpress%20blog&utm_medium=content%20link&utm_campaign=promote%20mdn](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)    
 
 
-## Description 
-[Visit the Deployed Site](https://bdalberson.github.io/ReademeGen/)
-
-
-
 ## Code Refactor Example
 
 
@@ -47,6 +42,7 @@ inquirer
 ## Usage 
 
 Go to terminal and fill out and prompts to be delivered an expertly styled README in .md format.
+
 ## Learning Points 
 
 
