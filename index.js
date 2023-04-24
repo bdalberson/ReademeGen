@@ -60,38 +60,39 @@ inquirer
         }
       },
   ])
-    .then((data) => {
-        console.log(data);
-        const { name, stack, title, install, usage, contrib, tests } = data;
-        const filename = `${data.title.trim().toLowerCase().split(' ').join('-')}-README.md`;
-        const content = 
-`# ${data.title}
-## Table of Contents
-- [Languages](#languages)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-## Languages
-${data.stack}
-## Installation
-${data.install}
-## Usage
-${data.usage}
-## Contributing
-${data.contrib}
-## Tests
-${data.tests}
-## Questions
-[My GitHub Profile](https://github.com/${data.github})
-[Email me!](mailto:${data.email})`;
-        writeToFile(fileName, content);
-    })
-, (err) => {
-            if (err) throw err;
-            console.log('The file has been saved!');
-        };
-
+  .then((data) => {
+    console.log(data);
+    const { name, stack, title, install, usage, contrib, tests } = data;
+    const filename = `${data.title.trim().toLowerCase().split(' ').join('-')}-README.md`;
+    const content = 
+    `# ${data.title}
+    ## Table of Contents
+    - [Languages](#languages)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Contributing](#contributing)
+    - [Tests](#tests)
+    - [Questions](#questions)
+    ## Languages
+    ${data.stack}
+    ## Installation
+    ${data.install}
+    ## Usage
+    ${data.usage}
+    ## Contributing
+    ${data.contrib}
+    ## Tests
+    ${data.tests}
+    ## Questions
+    ![](https://img.shields.io/badge/%3CLicense%3E-%3CMIT%3E-%3CBLUE%3E)
+    `
+    fs.writeFile(filename, content, (err) => {
+        if (err) throw err;
+        console.log('The file has been saved!');
+    });
+})
+.catch((err) => {
+    console.log(err);
+});
 
 
